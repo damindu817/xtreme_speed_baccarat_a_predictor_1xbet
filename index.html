@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="si">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Xtreme Speed Baccarat</title>
+    <style>
+      body {
+        background-color: #000814;
+        color: #ffffff;
+        font-family: 'Segoe UI', sans-serif;
+        text-align: center;
+        padding: 20px;
+      }
+
+      .header-box {
+        border: 2px solid #00ffe7;
+        border-radius: 15px;
+        padding: 20px;
+        margin-bottom: 20px;
+        background: linear-gradient(135deg, #001f3f, #003366);
+        animation: glowFade 4s infinite ease-in-out;
+      }
+
+      .header-box h1,
+      .header-box h2 {
+        margin: 5px 0;
+      }
+
+      .info-box {
+        margin: 10px 0;
+        font-size: 1.1em;
+      }
+
+      .prediction-box {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        border: 4px solid #ff007f;
+        background: #111;
+        margin: 25px auto;
+        box-shadow: 0 0 15px #ff007f, inset 0 0 20px #ff007f;
+        animation: pulse 2s infinite;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 10px;
+      }
+
+      .prediction-box h3 {
+        margin: 5px;
+        font-size: 1.1em;
+      }
+
+      .prediction-box .main-prediction {
+        font-size: 1.9em;
+        font-weight: bold;
+        color: #ff007f;
+      }
+
+      .button-container {
+        margin: 25px 0;
+      }
+
+      .btn {
+        display: inline-block;
+        color: white;
+        padding: 10px 18px;
+        margin: 10px;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: 500;
+        border: 2px solid white;
+        transition: all 0.3s ease-in-out;
+        box-shadow: 0 0 10px white;
+      }
+
+      .btn.whatsapp {
+        background-color: #25D366;
+        box-shadow: 0 0 12px #25D366;
+      }
+
+      .btn.telegram {
+        background-color: #0088cc;
+        box-shadow: 0 0 12px #0088cc;
+      }
+
+      .btn:hover,
+      .btn:active {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px white, 0 0 25px currentColor;
+      }
+
+      footer {
+        margin-top: 30px;
+        font-size: 0.9em;
+        color: #888;
+      }
+
+      @keyframes glowFade {
+        0% {
+          box-shadow: 0 0 5px #00ffe7;
+        }
+
+        50% {
+          box-shadow: 0 0 18px #00ffe7;
+        }
+
+        100% {
+          box-shadow: 0 0 5px #00ffe7;
+        }
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+
+        50% {
+          transform: scale(1.02);
+        }
+
+        100% {
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-box">
+      <h1>XTREME SPEED BACCARAT A PREDICTOR</h1>
+      <h2>1xbet Evolution</h2>
+    </div>
+    <div class="info-box">
+      <div>Live Time: <span id="liveTime">--:--:--</span>
+      </div>
+      <div>Date: 2025.04.21</div>
+      <div style="margin-top: 10px; font-size: 0.9em; color: #bbb;">Last Chart Update: 2025.04.21</div>
+    </div>
+    <div class="prediction-box">
+      <h3>Next In:</h3>
+      <div class="main-prediction">BANKER</div>
+      <h3>02:23</h3>
+      <div style="font-size: 0.8em; color: #ccc;">Count Down: 00:01</div>
+    </div>
+    <div class="button-container">
+      <a class="btn whatsapp" href="https://wa.me/xxxxxxxx" target="_blank">WhatsApp</a>
+      <a class="btn telegram" href="https://t.me/xxxxxxxx" target="_blank">Telegram</a>
+    </div>
+    <footer> POWERED BY XTREME PREDICTOR © 2025 </footer>
+    <script>
+      function updateTime() {
+        const now = new Date();
+        document.getElementById("liveTime").textContent = now.toLocaleTimeString('en-GB', {
+          hour12: false
+        });
+      }
+      setInterval(updateTime, 1000);
+      updateTime();
+    </script>
+  </body>
+</html>

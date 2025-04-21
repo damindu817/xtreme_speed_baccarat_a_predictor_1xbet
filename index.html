@@ -15,11 +15,16 @@
       font-family: 'Segoe UI', sans-serif;
       text-align: center;
       padding: 20px;
+      margin-top: 60px;
 
       opacity: 0;
       transform: translateY(20px);
       animation: fadeInPage 1.2s ease-out forwards;
       animation-delay: 0.6s;
+
+      user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
     }
 
     @keyframes fadeInPage {
@@ -218,6 +223,14 @@
       const loader = document.getElementById("loader");
       loader.style.opacity = "0";
       setTimeout(() => loader.style.display = "none", 600);
+    });
+
+    // Block right-click and keyboard copy/paste
+    document.addEventListener('contextmenu', event => event.preventDefault());
+    document.addEventListener('keydown', function(e) {
+      if ((e.ctrlKey || e.metaKey) && ['c', 'x', 'v', 'u', 'a'].includes(e.key.toLowerCase())) {
+        e.preventDefault();
+      }
     });
 
     function updateDateTime() {

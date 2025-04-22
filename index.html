@@ -1,30 +1,23 @@
 <!DOCTYPE html>
 <html lang="si">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Xtreme Speed Baccarat</title>
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-
+    html { scroll-behavior: smooth }
     body {
       background-color: #000814;
-      color: #ffffff;
+      color: #fff;
       font-family: 'Segoe UI', sans-serif;
       text-align: center;
       padding: 20px;
       margin-top: 60px;
-
       opacity: 0;
       transform: translateY(20px);
       animation: fadeInPage 1.2s ease-out forwards;
-      animation-delay: 0.6s;
-
+      animation-delay: .6s;
       user-select: none;
-      -webkit-user-select: none;
-      -ms-user-select: none;
     }
 
     @keyframes fadeInPage {
@@ -45,11 +38,11 @@
       align-items: center;
       justify-content: center;
       z-index: 9999;
-      transition: opacity 0.6s ease;
+      transition: opacity .6s ease;
     }
 
     .loader {
-      border: 8px solid #003366;
+      border: 8px solid #036;
       border-top: 8px solid #00ffe7;
       border-radius: 50%;
       width: 60px;
@@ -58,19 +51,43 @@
     }
 
     @keyframes spin {
-      to { transform: rotate(360deg); }
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     .header-box {
       border: 1.5px solid #00ffe7;
+      outline: 2px solid white;
       border-radius: 12px;
       padding: 16px 12px;
       margin-bottom: 20px;
-      background: linear-gradient(135deg, #001f3f, #003366);
-      animation: glowFade 4s infinite ease-in-out;
+      background: linear-gradient(135deg, rgba(0,31,63,.9), rgba(0,51,102,.9));
       max-width: 360px;
       margin-left: auto;
       margin-right: auto;
+      transition:
+        background 1s ease-in-out,
+        border-color 1s ease-in-out,
+        outline-color 1s ease-in-out,
+        box-shadow 1s ease-in-out;
+      animation: glowLoopBlue 4s infinite ease-in-out;
+    }
+
+    .header-box.banker-mode {
+      background: linear-gradient(135deg, rgba(51,0,24,.9), rgba(102,0,51,.9));
+      border-color: rgba(255,0,127,.8);
+      animation: glowLoopPink 4s infinite ease-in-out;
+    }
+
+    @keyframes glowLoopBlue {
+      0%, 100% { box-shadow: 0 0 6px #00ccff; outline-color: #00ccff; }
+      50% { box-shadow: 0 0 16px #00ccff; outline-color: #66e0ff; }
+    }
+
+    @keyframes glowLoopPink {
+      0%, 100% { box-shadow: 0 0 6px #ff007f; outline-color: #ff007f; }
+      50% { box-shadow: 0 0 16px #ff66aa; outline-color: #ff99cc; }
     }
 
     .header-title {
@@ -91,10 +108,10 @@
     .info-datetime {
       display: inline-block;
       padding: 8px 12px;
-      border: 2px solid #ffffff;
+      border: 2px solid #fff;
       border-radius: 10px;
       font-size: 1.4em;
-      font-weight: bold;
+      font-weight: 700;
       margin: 6px auto;
     }
 
@@ -112,17 +129,17 @@
       align-items: center;
       justify-content: center;
       padding: 10px;
-      transition: all 0.6s ease;
+      transition: all .6s ease;
     }
 
     .prediction-box.player-mode {
-      border-color: #00ccff;
-      box-shadow: 0 0 15px #00ccff, inset 0 0 20px #00ccff;
+      border-color: #0cf;
+      box-shadow: 0 0 15px #0cf, inset 0 0 20px #0cf;
     }
 
     .main-prediction {
       font-size: 2em;
-      font-weight: bold;
+      font-weight: 700;
       color: #ff007f;
       margin-bottom: 5px;
     }
@@ -134,7 +151,7 @@
 
     #countLabel {
       font-size: 1.1em;
-      color: #ffffff;
+      color: #fff;
       margin-top: 5px;
     }
 
@@ -144,80 +161,66 @@
 
     .btn {
       display: inline-block;
-      color: white;
+      color: #fff;
       padding: 10px 18px;
       margin: 10px;
       border-radius: 30px;
       text-decoration: none;
       font-weight: 500;
-      border: 2px solid white;
-      transition: all 0.3s ease-in-out;
-      box-shadow: 0 0 10px white;
+      border: 2px solid #fff;
+      transition: all .3s ease-in-out;
+      box-shadow: 0 0 10px #fff;
     }
 
     .btn.whatsapp {
-      background-color: #25D366;
-      box-shadow: 0 0 12px #25D366;
+      background-color: #25d366;
+      box-shadow: 0 0 12px #25d366;
     }
 
     .btn.telegram {
-      background-color: #0088cc;
-      box-shadow: 0 0 12px #0088cc;
+      background-color: #08c;
+      box-shadow: 0 0 12px #08c;
     }
 
-    .btn:hover,
-    .btn:active {
+    .btn:active,
+    .btn:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 20px white, 0 0 25px currentColor, inset 0 0 10px currentColor;
+      box-shadow: 0 0 20px #fff, 0 0 25px currentColor, inset 0 0 10px currentColor;
     }
 
     footer {
       margin-top: 30px;
-      font-size: 0.9em;
+      font-size: .9em;
       color: #888;
     }
 
-    @keyframes glowFade {
-      0% { box-shadow: 0 0 4px #00ffe7; }
-      50% { box-shadow: 0 0 10px #00ffe7; }
-      100% { box-shadow: 0 0 4px #00ffe7; }
-    }
-
     @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.02); }
-      100% { transform: scale(1); }
+      0% { transform: scale(1) }
+      50% { transform: scale(1.02) }
+      100% { transform: scale(1) }
     }
   </style>
 </head>
 <body>
-  <div id="loader" class="loader-wrapper">
-    <div class="loader"></div>
-  </div>
-
+  <div id="loader" class="loader-wrapper"><div class="loader"></div></div>
   <div class="header-box">
     <div class="header-title">XTREME SPEED BACCARAT A PREDICTOR</div>
     <div class="header-subtitle">1XBET EVOLUTION ONLINE CASINO GAME</div>
   </div>
-
   <div class="info-box">
     <div class="info-datetime" id="dateTimeBox">--</div>
-    <div style="margin-top: 10px; font-size: 0.9em; color: #bbb;">Last Chart Update: 2025.04.21</div>
+    <div style="margin-top:10px;font-size:.9em;color:#bbb">Last Chart Update: 2025.04.21</div>
   </div>
-
   <div class="prediction-box" id="signalBox">
     <div class="main-prediction" id="predictionText">--</div>
     <div id="signalTime">--:--</div>
     <div id="countLabel">Upcoming in: --:--</div>
   </div>
-
   <div class="button-container">
     <a class="btn whatsapp" href="https://wa.me/xxxxxxxx" target="_blank">WhatsApp</a>
     <a class="btn telegram" href="https://t.me/xxxxxxxx" target="_blank">Telegram</a>
   </div>
-
   <footer>POWERED BY XTREME PREDICTOR © 2025</footer>
-
   <script>
     window.addEventListener("load", () => {
       const loader = document.getElementById("loader");
@@ -225,7 +228,6 @@
       setTimeout(() => loader.style.display = "none", 600);
     });
 
-    // Block right-click and keyboard copy/paste
     document.addEventListener('contextmenu', event => event.preventDefault());
     document.addEventListener('keydown', function(e) {
       if ((e.ctrlKey || e.metaKey) && ['c', 'x', 'v', 'u', 'a'].includes(e.key.toLowerCase())) {
@@ -259,7 +261,6 @@
       const minutes = now.getMinutes();
       const seconds = now.getSeconds();
       const hour = now.getHours();
-
       for (let i = 0; i < signalSchedule.length; i++) {
         const signal = signalSchedule[i];
         if (signal.minute > minutes || (signal.minute === minutes && seconds < 59)) {
@@ -284,6 +285,7 @@
       const signalTime = document.getElementById("signalTime");
       const countLabel = document.getElementById("countLabel");
       const signalBox = document.getElementById("signalBox");
+      const headerBox = document.querySelector(".header-box");
 
       if (active) {
         countLabel.textContent = `End in: ${String(59 - now.getSeconds()).padStart(2, "0")}s`;
@@ -305,8 +307,10 @@
 
       if ((active && active.type === "PLAYER") || (!active && next.type === "PLAYER")) {
         signalBox.classList.add("player-mode");
+        headerBox.classList.remove("banker-mode");
       } else {
         signalBox.classList.remove("player-mode");
+        headerBox.classList.add("banker-mode");
       }
     }
 
@@ -314,4 +318,5 @@
     updatePrediction();
   </script>
 </body>
+</html>
 </html>
